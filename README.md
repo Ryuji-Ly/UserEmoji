@@ -29,22 +29,13 @@ The repository includes [release.yml](.github/workflows/release.yml), which runs
 It does two things:
 
 - installs dependencies and builds the bot
-- builds the Docker image and pushes it to `ghcr.io/ryuji-ly/useremoji`
+- builds a multi-architecture Docker image for `linux/amd64` and `linux/arm64` and pushes it to `ghcr.io/ryuji-ly/useremoji`
 
 The Docker image does not include your `.env` file. That stays on the VPS.
 
 This means Discord secrets do not need to exist in GitHub at all.
 
 ## VPS Deployment
-
-Yes. If you want Discord secrets to live strictly on the VPS, the correct model is:
-
-- GitHub Actions builds and pushes the container image only
-- the VPS stores `.env`
-- the VPS starts the bot with that `.env`
-- command deployment is run from the VPS, not from GitHub Actions
-
-Recommended setup:
 
 1. Install Docker and Docker Compose on the VPS.
 2. Create `/opt/useremoji` on the VPS.
