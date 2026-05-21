@@ -1,0 +1,25 @@
+{
+  "name": "user-emoji-bot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Discord user-installable bot for extracting custom emojis from messages.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "deploy": "tsx src/deploy.ts"
+  },
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "dependencies": {
+    "discord.js": "^14.21.0",
+    "dotenv": "^16.6.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}
