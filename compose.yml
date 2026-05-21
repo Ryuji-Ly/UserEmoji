@@ -1,0 +1,7 @@
+services:
+    useremoji-bot:
+        image: ${IMAGE_NAME:-ghcr.io/ryuji-ly/useremoji:latest}
+        container_name: useremoji-bot
+        restart: unless-stopped
+        env_file:
+            - .env

@@ -1,0 +1,9 @@
+[Unit]
+Description=Update UserEmoji bot container
+Wants=docker.service
+After=docker.service network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/useremoji
+ExecStart=/opt/useremoji/deploy/update.sh
